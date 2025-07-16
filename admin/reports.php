@@ -34,7 +34,7 @@ $expiring_query = "SELECT i.*, m.name, m.generic_name, c.name as category_name
     FROM inventory i 
     JOIN medicines m ON i.medicine_id = m.id 
     LEFT JOIN categories c ON m.category_id = c.id 
-    WHERE i.expiry_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 6 MONTH)
+    WHERE i.expiry_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 3 MONTH)
     ORDER BY i.expiry_date ASC";
 $expiring_result = $conn->query($expiring_query);
 
@@ -312,7 +312,7 @@ include '../includes/header.php';
 <!-- Expiring Medicines -->
 <div class="card mb-4">
     <div class="card-header bg-danger text-white">
-        <h5 class="m-0"><i class="fas fa-clock mr-2"></i>Expiring Medicines (Next 6 Months)</h5>
+        <h5 class="m-0"><i class="fas fa-clock mr-2"></i>Expiring Medicines (Next 3 Months)</h5>
     </div>
     <div class="card-body">
         <?php if ($expiring_result->num_rows > 0): ?>
@@ -354,7 +354,7 @@ include '../includes/header.php';
             </div>
         <?php else: ?>
             <div class="alert alert-success">
-                <i class="fas fa-check-circle mr-2"></i> No medicines are expiring in the next 6 months.
+                <i class="fas fa-check-circle mr-2"></i> No medicines are expiring in the next 3 months.
             </div>
         <?php endif; ?>
     </div>
