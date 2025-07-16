@@ -86,7 +86,7 @@ $medicines_query = "SELECT id, name FROM medicines ORDER BY name";
 $medicines_result = $conn->query($medicines_query);
 
 // Get inventory items for transaction form
-$inventory_query = "SELECT i.id, m.name, i.batch_number, i.quantity, i.unit_price 
+$inventory_query = "SELECT i.id, m.name, i.batch_number, i.quantity, i.selling_price 
                    FROM inventory i 
                    JOIN medicines m ON i.medicine_id = m.id 
                    WHERE i.quantity > 0 
@@ -265,7 +265,7 @@ include '../includes/header.php';
                                 <select class="form-control" name="inventory_id" id="inventory_id" required>
                                     <option value="">Select Inventory Item</option>
                                     <?php while ($inv = $inventory_result->fetch_assoc()): ?>
-                                        <option value="<?php echo $inv['id']; ?>" data-price="<?php echo $inv['unit_price']; ?>">
+                                        <option value="<?php echo $inv['id']; ?>" data-price="<?php echo $inv['selling_price']; ?>">
                                             <?php echo htmlspecialchars($inv['name'] . ' - Batch: ' . $inv['batch_number'] . ' (Qty: ' . $inv['quantity'] . ')'); ?>
                                         </option>
                                     <?php endwhile; ?>

@@ -211,10 +211,7 @@ include '../includes/header.php';
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Unit Price *</label>
-                        <input type="number" class="form-control" name="unit_price" step="0.01" min="0" required>
-                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -299,6 +296,7 @@ include '../includes/header.php';
                         <label>Unit Price *</label>
                         <input type="number" class="form-control" name="unit_price" id="edit_unit_price" step="0.01" min="0" required>
                     </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -348,6 +346,7 @@ function editMedicine(id) {
             document.getElementById('edit_strength').value = data.strength;
             document.getElementById('edit_category_id').value = data.category_id;
             document.getElementById('edit_unit_price').value = data.unit_price;
+
             $('#editMedicineModal').modal('show');
         });
 }
