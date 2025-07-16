@@ -1,0 +1,146 @@
+/* Main Styles for Medical Inventory System */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    min-height: 100vh;
+    background-color: #343a40;
+    padding-top: 20px;
+    position: fixed;
+    width: 250px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.btn-action {
+    margin-right: 5px;
+}
+
+.dashboard-card {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.dashboard-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.dashboard-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.expiring-soon {
+    background-color: #fff3cd;
+}
+
+.expired {
+    background-color: #f8d7da;
+}
+
+.low-stock {
+    background-color: #d1ecf1;
+}
+
+.filter-form {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+} 
