@@ -128,7 +128,7 @@ include '../includes/header.php';
                             <td><?php echo htmlspecialchars($row['category_name']); ?></td>
                             <td><?php echo htmlspecialchars($row['dosage_form']); ?></td>
                             <td><?php echo htmlspecialchars($row['strength']); ?></td>
-                            <td>$<?php echo number_format($row['unit_price'], 2); ?></td>
+                            <td>₱<?php echo number_format($row['unit_price'], 2); ?></td>
                             <td>
                                 <button class="btn btn-sm btn-info" onclick="editMedicine(<?php echo $row['id']; ?>)">
                                     <i class="fas fa-edit"></i>

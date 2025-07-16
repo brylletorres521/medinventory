@@ -166,11 +166,11 @@ include '../includes/header.php';
                             Total Inventory Value
                         </div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            $<?php echo number_format($inventory_summary['total_value'], 2); ?>
+                            ₱<?php echo number_format($inventory_summary['total_value'], 2); ?>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        <i class="fas fa-money-bill-wave fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@ include '../includes/header.php';
                                     <td><span class="badge badge-<?php echo $row['transaction_type'] == 'purchase' ? 'success' : ($row['transaction_type'] == 'sale' ? 'primary' : 'info'); ?>"><?php echo ucfirst($row['transaction_type']); ?></span></td>
                                     <td><?php echo $row['count']; ?></td>
                                     <td><?php echo number_format($row['total_quantity']); ?></td>
-                                    <td>$<?php echo number_format($row['total_amount'], 2); ?></td>
+                                    <td>₱<?php echo number_format($row['total_amount'], 2); ?></td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
@@ -254,7 +254,7 @@ include '../includes/header.php';
                                     <td><?php echo htmlspecialchars($row['category_name'] ?: 'Uncategorized'); ?></td>
                                     <td><?php echo $row['medicine_count']; ?></td>
                                     <td><?php echo number_format($row['total_quantity']); ?></td>
-                                    <td>$<?php echo number_format($row['total_value'], 2); ?></td>
+                                    <td>₱<?php echo number_format($row['total_value'], 2); ?></td>
                                 </tr>
                             <?php endwhile; ?>
                         </tbody>
@@ -294,8 +294,8 @@ include '../includes/header.php';
                                 <td><?php echo htmlspecialchars($row['category_name'] ?: 'Uncategorized'); ?></td>
                                 <td><?php echo htmlspecialchars($row['batch_number']); ?></td>
                                 <td><span class="badge badge-<?php echo $row['quantity'] <= 5 ? 'danger' : 'warning'; ?>"><?php echo $row['quantity']; ?></span></td>
-                                <td>$<?php echo number_format($row['selling_price'], 2); ?></td>
-                                <td>$<?php echo number_format($row['quantity'] * $row['selling_price'], 2); ?></td>
+                                <td>₱<?php echo number_format($row['selling_price'], 2); ?></td>
+                                <td>₱<?php echo number_format($row['quantity'] * $row['selling_price'], 2); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -346,7 +346,7 @@ include '../includes/header.php';
                                 <td><?php echo $row['quantity']; ?></td>
                                 <td><?php echo date('M d, Y', strtotime($row['expiry_date'])); ?></td>
                                 <td><span class="badge badge-<?php echo $days_left <= 30 ? 'danger' : ($days_left <= 90 ? 'warning' : 'info'); ?>"><?php echo $days_left; ?> days</span></td>
-                                <td>$<?php echo number_format($row['quantity'] * $row['selling_price'], 2); ?></td>
+                                <td>₱<?php echo number_format($row['quantity'] * $row['selling_price'], 2); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -396,7 +396,7 @@ include '../includes/header.php';
                                 </td>
                                 <td><?php echo htmlspecialchars($row['generic_name']); ?></td>
                                 <td><?php echo number_format($row['total_sold']); ?></td>
-                                <td><strong>$<?php echo number_format($row['total_revenue'], 2); ?></strong></td>
+                                <td><strong>₱<?php echo number_format($row['total_revenue'], 2); ?></strong></td>
                             </tr>
                         <?php 
                         $rank++;

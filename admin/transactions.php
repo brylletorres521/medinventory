@@ -233,8 +233,8 @@ include '../includes/header.php';
                             <td><?php echo htmlspecialchars($row['batch_number']); ?></td>
                             <td><span class="badge <?php echo $badge_class; ?>"><?php echo ucfirst(htmlspecialchars($row['transaction_type'])); ?></span></td>
                             <td><?php echo htmlspecialchars($row['quantity']); ?></td>
-                            <td>$<?php echo number_format($row['unit_price'], 2); ?></td>
-                            <td><strong>$<?php echo number_format($row['total_amount'], 2); ?></strong></td>
+                            <td>₱<?php echo number_format($row['unit_price'], 2); ?></td>
+                            <td><strong>₱<?php echo number_format($row['total_amount'], 2); ?></strong></td>
                             <td><?php echo htmlspecialchars($row['username']); ?></td>
                             <td><?php echo htmlspecialchars($row['notes']); ?></td>
                         </tr>
@@ -339,7 +339,7 @@ function calculateTotal() {
     const quantity = parseFloat(document.getElementById('quantity').value) || 0;
     const unitPrice = parseFloat(document.getElementById('unit_price').value) || 0;
     const total = quantity * unitPrice;
-    document.getElementById('total_amount').value = '$' + total.toFixed(2);
+    document.getElementById('total_amount').value = '₱' + total.toFixed(2);
 }
 </script>
 
