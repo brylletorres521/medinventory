@@ -16,7 +16,7 @@ $date_to = isset($_GET['date_to']) ? $_GET['date_to'] : date('Y-m-d');
 $inventory_summary_query = "SELECT 
     COUNT(*) as total_items,
     SUM(quantity) as total_quantity,
-    SUM(quantity * unit_price) as total_value
+    SUM(quantity * selling_price) as total_value
     FROM inventory";
 $inventory_summary = $conn->query($inventory_summary_query)->fetch_assoc();
 
@@ -69,7 +69,7 @@ $category_inventory_query = "SELECT
     c.name as category_name,
     COUNT(DISTINCT i.medicine_id) as medicine_count,
     SUM(i.quantity) as total_quantity,
-    SUM(i.quantity * i.unit_price) as total_value
+    SUM(i.quantity * i.selling_price) as total_value
     FROM inventory i
     JOIN medicines m ON i.medicine_id = m.id
     LEFT JOIN categories c ON m.category_id = c.id
@@ -294,8 +294,8 @@ include '../includes/header.php';
                                 <td><?php echo htmlspecialchars($row['category_name'] ?: 'Uncategorized'); ?></td>
                                 <td><?php echo htmlspecialchars($row['batch_number']); ?></td>
                                 <td><span class="badge badge-<?php echo $row['quantity'] <= 5 ? 'danger' : 'warning'; ?>"><?php echo $row['quantity']; ?></span></td>
-                                <td>$<?php echo number_format($row['unit_price'], 2); ?></td>
-                                <td>$<?php echo number_format($row['quantity'] * $row['unit_price'], 2); ?></td>
+                                <td>$<?php echo number_format($row['selling_price'], 2); ?></td>
+                                <td>$<?php echo number_format($row['quantity'] * $row['selling_price'], 2); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -346,7 +346,7 @@ include '../includes/header.php';
                                 <td><?php echo $row['quantity']; ?></td>
                                 <td><?php echo date('M d, Y', strtotime($row['expiry_date'])); ?></td>
                                 <td><span class="badge badge-<?php echo $days_left <= 30 ? 'danger' : ($days_left <= 90 ? 'warning' : 'info'); ?>"><?php echo $days_left; ?> days</span></td>
-                                <td>$<?php echo number_format($row['quantity'] * $row['unit_price'], 2); ?></td>
+                                <td>$<?php echo number_format($row['quantity'] * $row['selling_price'], 2); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
