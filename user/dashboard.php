@@ -41,6 +41,7 @@ include '../includes/header.php';
 <!-- Dashboard Cards -->
 <div class="row">
     <div class="col-xl-4 col-md-6 mb-4">
+        <a href="inventory.php" class="text-decoration-none">
         <div class="card dashboard-card">
             <div class="card-body">
                 <div class="dashboard-icon">
@@ -50,9 +51,11 @@ include '../includes/header.php';
                 <div class="dashboard-label">Inventory Items</div>
             </div>
         </div>
+        </a>
     </div>
     
     <div class="col-xl-4 col-md-6 mb-4">
+        <a href="inventory.php?expiry=3months" class="text-decoration-none">
         <div class="card dashboard-card">
             <div class="card-body">
                 <div class="dashboard-icon">
@@ -62,9 +65,11 @@ include '../includes/header.php';
                 <div class="dashboard-label">Expiring Soon</div>
             </div>
         </div>
+        </a>
     </div>
     
     <div class="col-xl-4 col-md-6 mb-4">
+        <a href="transactions.php" class="text-decoration-none">
         <div class="card dashboard-card">
             <div class="card-body">
                 <div class="dashboard-icon">
@@ -74,6 +79,7 @@ include '../includes/header.php';
                 <div class="dashboard-label">Recent Transactions</div>
             </div>
         </div>
+        </a>
     </div>
 </div>
 
